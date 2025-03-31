@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Allure Style Weboldal</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="./videos/your-video.mp4" type="video/mp4">
+        A böngészője nem támogatja a videó lejátszását.
+    </video>
+
+  <!-- Fejléc -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Főoldal</a></li>
+        <li><a href="#portfolio">Portfólió</a></li>
+        <li><a href="#signup">Jelentkezés</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero szekció -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Üdvözlünk!</h1>
+      <p>Fedezd fel a legújabb kollekciónkat</p>
+      <!-- Alap CTA gomb -->
+      <a href="#portfolio" class="btn">Tovább</a>
+    </div>
+  </section>
+
+  <!-- Portfólió szekció -->
+  <section class="portfolio" id="portfolio">
+    <h2>Portfólió</h2>
+    <div class="gallery">
+      <img src="./portfolio1.jpg" alt="Kép 1">
+      <img src="./portfolio2.jpg" alt="Kép 2">
+      <img src="./portfolio3.jpg" alt="Kép 3">
+      <img src="./portfolio4.jpg" alt="Kép 4">
+    </div>
+  </section>
+
+  <!-- Jelentkezési űrlap szekció -->
+  <section class="signup-section" id="signup">
+    <div class="form-container">
+      <h2>Jelentkezés</h2>
+      <form action="submit.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Név" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <label for="dob">Születési dátum:</label>
+        <input type="date" id="dob" name="dob" required>
+        <input type="text" name="phone" placeholder="Telefonszám">
+        <textarea name="message" placeholder="Üzenet" rows="4"></textarea>
+        
+        <!-- Fájlfeltöltés mezők -->
+        <style>
+          input[type="file"] {
+              border: none;
+              background: white;
+              padding: 10px;
+              font-size: 1rem;
+              cursor: pointer;
+          }
+      
+          input[type="file"]::file-selector-button {
+              background: #3498db;
+              color: white;
+              border: none;
+              padding: 10px;
+              cursor: pointer;
+              font-size: 1rem;
+              border-radius: 5px;
+              transition: background 0.3s;
+          }
+      
+          input[type="file"]::file-selector-button:hover {
+              background: #2980b9;
+          }
+      </style>      
+
+        <label for="full-body-photo">Teljes alakos fotó csatolása:</label>
+        <input type="file" id="full-body-photo" name="full-body-photo" accept="image/*" required>
+        
+        <label for="face-photo">Arc közeli kép csatolása:</label>
+        <input type="file" id="face-photo" name="face-photo" accept="image/*" required>
+        
+        <!-- Checkbox a feltételek elfogadásához -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">Megértettem és elfogadom az <a href="masikoldal.html" target="_blank">adatvédelmi tájékoztató</a> tartalmát!</label>
+        </div>
+        <button type="submit" class="signup-btn">Jelentkezz most!</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Lábléc -->
+  <footer id="contact">
+    <p>&copy; 2025 Allure Style. Minden jog fenntartva.</p>
+    <p>Email: info@allurestyle.hu | Telefon: +36 30 123 4567</p>
+  </footer>
+
+  <!-- JavaScript fájl betöltése -->
+  <script src="./script.js"></script>
+</body>
+</html>
